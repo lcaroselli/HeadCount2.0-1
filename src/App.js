@@ -1,12 +1,46 @@
 import React, { Component } from 'react';
-import './App.css';
+import Card from './Card.js';
+import CardDisplay from './CardDisplay.js';
+import Controls from './Controls.js';
+import DistrictRepository from './helper.js';
+import kinderData from '../data/kindergartners_in_full_day_program.js';
+// import './App.css';
+// import '../styles/MyNameIs.css';
 
-class App extends Component {
+const districtData = new DistrictRepository(kinderData);
+
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cards: districtData.checkData(),
+
+    };
+  }
+
+
+
+
+
+
+
+
   render() {
+
+
+
+
+
+
+
     return (
-      <div>Welcome To Headcount 2.0</div>
+      <div>
+        <Controls />
+
+      Welcome To Headcount 2.0
+
+
+      </div>
     );
   }
 }
-
-export default App;

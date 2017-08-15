@@ -1,4 +1,4 @@
-export default class DistrictRepository {
+class DistrictRepository {
   constructor(data) {
     this.data = this.checkData(data)
   }
@@ -25,6 +25,7 @@ export default class DistrictRepository {
     }
   }
 
+
   findAllMatches(string) {
     let keysArray = Object.keys(this.data)
     let fullData = keysArray.map(key => this.data[key]);
@@ -37,4 +38,8 @@ export default class DistrictRepository {
     return fullData;
   }
 
+
 }
+
+
+export default DistrictRepository;
