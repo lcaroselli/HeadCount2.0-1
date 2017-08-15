@@ -18,16 +18,24 @@ class DistrictRepository {
 
   findByName(location = undefined) {
     if(location) {
-    let keysArray = Object.keys(this.data)
-    let found = keysArray.find(item =>  item.toUpperCase() === location.toUpperCase());
+      let keysArray = Object.keys(this.data)
+      let found = keysArray.find(item =>  item.toUpperCase() === location.toUpperCase());
 
-    return this.data[found]
+      return this.data[found];
     }
   }
 
-  findAllMatches(location) {
-    let keysArray = Object.keys(this.data);
-    let matches = keysArray.map
+
+  findAllMatches(string) {
+    let keysArray = Object.keys(this.data)
+    let fullData = keysArray.map(key => this.data[key]);
+
+    if(string) {
+      return fullData.filter(object =>
+      object.location.includes(string.toUpperCase()))
+    }
+
+    return fullData;
   }
 
 
