@@ -1,0 +1,15 @@
+
+/**********************************************
+          General
+***********************************************/
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
