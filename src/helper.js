@@ -10,7 +10,6 @@ class DistrictRepository {
         acc[object.Location] = {location: object.Location.toUpperCase(), data:{} };
       }
       acc[object.Location].data[object.TimeFrame] = Math.round(1000 * object.Data) / 1000 || 0;
-
       return acc;
 
     }, {})
