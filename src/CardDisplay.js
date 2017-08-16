@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from './Card.js';
 
 
 export default class CardDisplay extends Component {
@@ -16,6 +17,7 @@ export default class CardDisplay extends Component {
           <div className='top-placeholder'></div>
 
           <section className='card-container'>
+            <Card />
           </section>
         </section>
 

@@ -13,25 +13,13 @@ const districtData = new DistrictRepository(kinderData);
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {
-      // cards: districtData.checkData(),
-
-    };
+  //   this.state = {
+  //     // cards: districtData.checkData(),
+  //
+  //   };
   }
 
-
-
-
-
-
-
-
   render() {
-
-
-
-
-
 
 
     return (
