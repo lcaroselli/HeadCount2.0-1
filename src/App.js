@@ -14,33 +14,19 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      // cards: districtData.checkData(),
-
+      cards: districtData.findAllMatches(),
     };
   }
-
-
-
-
-
-
-
 
   render() {
 
 
-
-
-
-
-
     return (
       <div>
+
         <Background />
         <Controls />
-        <CardDisplay />
-
-
+        <CardDisplay cardInfo={this.state.cards} />
 
       </div>
     );

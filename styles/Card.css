@@ -1,1 +1,32 @@
+.card {
+  background: red;
+  height: 500px;
+  width: 300px;
+}
 
+.card-data {
+  align-items: center;
+  background: purple;
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-data li {
+  font-size: 12px;
+}
+
+.card-title-container {
+  align-items: center;
+  background: green;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 20px;
+}
