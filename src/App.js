@@ -18,6 +18,11 @@ export default class App extends Component {
     };
   }
 
+  searchData(userInput) {
+    this.setState({
+      cards: districtData.findAllMatches(userInput)
+    });
+  }
 
 
   render() {
@@ -27,8 +32,10 @@ export default class App extends Component {
       <div>
 
         <Background />
-        <Controls />
-        <CardDisplay cardInfo={this.state.cards} />
+        <Controls
+          search = { this.searchData.bind(this) } />
+        <CardDisplay
+          cardInfo={ this.state.cards } />
 
       </div>
     );

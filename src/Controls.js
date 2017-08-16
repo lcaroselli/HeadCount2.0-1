@@ -16,14 +16,12 @@ export default class Controls extends Component {
     })
   }
 
-  handleChange(input) {
-    this.props.search()
+  submitSearch()  {
+    const userInput = this.state.input;
+    this.props.search(userInput)
   }
 
-
   render() {
-
-
 
     return (
       <div>
@@ -39,7 +37,7 @@ export default class Controls extends Component {
                   <div className='input-box'>
                     <input className='search-input' onChange={ e => this.updateInput(e) } type='text'
                           placeholder='  Enter Your Shit' value={this.state.input} />
-                    <div className='submit-btn' onClick={this.handleChange.bind(this)}>
+                    <div className='submit-btn' onClick={ this.submitSearch.bind(this) }>
                       <p className='submit-btn-title'>SEARCH</p>
                     </div>
                   </div>
