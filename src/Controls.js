@@ -21,6 +21,11 @@ export default class Controls extends Component {
     this.props.search(userInput)
   }
 
+  searchOnChange(e)  {
+    this.updateInput(e);
+    this.submitSearch();
+  }
+
   render() {
 
     return (
@@ -35,7 +40,7 @@ export default class Controls extends Component {
                 </section>
                 <section className='input-container'>
                   <div className='input-box'>
-                    <input className='search-input' onChange={ e => this.updateInput(e) } type='text'
+                    <input className='search-input' onChange={ e => this.searchOnChange(e) } type='text'
                           placeholder='  Enter Your Shit' value={this.state.input} />
                     <div className='submit-btn' onClick={ this.submitSearch.bind(this) }>
                       <p className='submit-btn-title'>SEARCH</p>
