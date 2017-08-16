@@ -22,7 +22,7 @@
 
 .card-container {
   width: 98%;
-  min-height: 800px;
+  height: 70vh;
   background: #FFF;
   opacity: .95;
   border-radius: 10px;
@@ -30,4 +30,9 @@
   margin: auto;
   animation-duration: 5s;
   animation-name: card-display-slide-open;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
 }

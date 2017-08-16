@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './Card.js';
+// import Card from './Card.js';
 import CardDisplay from './CardDisplay.js';
 import Controls from './Controls.js';
 import DistrictRepository from './helper.js';
@@ -17,6 +17,8 @@ export default class App extends Component {
       cards: districtData.findAllMatches(),
     };
   }
+
+
 
   render() {
 

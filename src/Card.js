@@ -5,7 +5,7 @@ const Card = ({ location, yearData }) => {
   const yearKeys = Object.keys(yearData);
 
   const dataYear = yearKeys.map((value, i) =>
-    <p key={ i }>
+    <p key={ i } className='data'>
     { value }: { yearData[value] } </p>)
 
     return (

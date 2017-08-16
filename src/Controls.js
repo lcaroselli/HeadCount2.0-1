@@ -5,13 +5,26 @@ import logoWhite from '../assets/head-count-logo-white.png'
 export default class Controls extends Component {
   constructor() {
     super();
+    this.state={
+      input: ''
+    }
+  }
+
+  updateInput(e) {
+    this.setState({
+      input: e.target.value
+    })
+  }
+
+  handleChange(input) {
+    this.props.search()
   }
 
 
-
-
-
   render() {
+
+
+
     return (
       <div>
           <section className='header'>
@@ -24,8 +37,9 @@ export default class Controls extends Component {
                 </section>
                 <section className='input-container'>
                   <div className='input-box'>
-                    <input className='search-input' type='text'/>
-                    <div className='submit-btn' >
+                    <input className='search-input' onChange={ e => this.updateInput(e) } type='text'
+                          placeholder='  Enter Your Shit' value={this.state.input} />
+                    <div className='submit-btn' onClick={this.handleChange.bind(this)}>
                       <p className='submit-btn-title'>SEARCH</p>
                     </div>
                   </div>
