@@ -12,6 +12,12 @@ export default class CardDisplay extends Component {
   render() {
     return (
       <div>
+        <section className='card-display'>
+          <div className='top-placeholder'></div>
+
+          <section className='card-container'>
+          </section>
+        </section>
 
       </div>
     );

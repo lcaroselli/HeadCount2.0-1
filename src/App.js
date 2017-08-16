@@ -3,6 +3,7 @@ import Card from './Card.js';
 import CardDisplay from './CardDisplay.js';
 import Controls from './Controls.js';
 import DistrictRepository from './helper.js';
+import Background from './Background.js';
 import kinderData from '../data/kindergartners_in_full_day_program.js';
 // import './App.css';
 // import '../styles/MyNameIs.css';
@@ -13,7 +14,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: districtData.checkData(),
+      // cards: districtData.checkData(),
 
     };
   }
@@ -35,9 +36,10 @@ export default class App extends Component {
 
     return (
       <div>
+        <Background />
         <Controls />
+        <CardDisplay />
 
-      Welcome To Headcount 2.0
 
 
       </div>

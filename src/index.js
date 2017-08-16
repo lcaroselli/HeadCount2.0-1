@@ -5,6 +5,7 @@ import '../styles/App.css';
 import '../styles/Card.css';
 import '../styles/CardDisplay.css';
 import '../styles/Controls.css';
+import '../styles/background.css';
 
 
 import App from './App';
