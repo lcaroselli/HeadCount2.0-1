@@ -13,10 +13,9 @@ const districtData = new DistrictRepository(kinderData);
 export default class App extends Component {
   constructor() {
     super();
-  //   this.state = {
-  //     // cards: districtData.checkData(),
-  //
-  //   };
+    this.state = {
+      cards: districtData.findAllMatches(),
+    };
   }
 
   render() {
@@ -24,11 +23,10 @@ export default class App extends Component {
 
     return (
       <div>
+
         <Background />
         <Controls />
-        <CardDisplay />
-
-
+        <CardDisplay cardInfo={this.state.cards} />
 
       </div>
     );

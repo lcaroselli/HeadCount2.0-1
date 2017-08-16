@@ -11,14 +11,12 @@ export default class Card extends Component {
         <section className='card'>
 
           <section className='card-title-container'>
-            <p className='card-title'>CARD TITLE</p>
+            <p className='card-title'></p>
           </section>
 
           <section className='card-data'>
             <ul>
-              <li>DATA 1</li>
-              <li>DATA 2</li>
-              <li>DATA 3</li>
+              <li>DATA</li>
             </ul>
           </section>
 
