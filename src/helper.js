@@ -31,7 +31,7 @@ class DistrictRepository {
 
     if(string) {
       return fullData.filter(object =>
-      object.location.includes(string.toUpperCase()))
+      object.location.startsWith(string.toUpperCase()))
     }
 
     return fullData;
