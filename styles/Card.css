@@ -33,6 +33,11 @@
   border-top-right-radius: 8px;
 }
 
+.card-title-container:hover {
+  cursor: pointer;
+  background: #b99877;
+}
+
 .card-title {
   font-size: 14px;
   color: #FFF;
