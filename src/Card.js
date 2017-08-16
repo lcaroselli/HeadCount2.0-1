@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
+import CardDisplay from './CardDisplay.js';
 
-export default class Card extends Component {
-  constructor() {
-    super();
-  }
+const Card = ({ location, yearData }) => {
+  const yearKeys = Object.keys(yearData);
 
-  render() {
+  const dataYear = yearKeys.map((value, i) =>
+    <p key={ i }>
+    { value }: { yearData[value] } </p>)
+
     return (
       <div>
         <section className='card'>
-
           <section className='card-title-container'>
-            <p className='card-title'></p>
+            <p className='card-title'> { location } </p>
           </section>
 
           <section className='card-data'>
-            <ul>
-              <li>DATA</li>
-            </ul>
+            { dataYear }
           </section>
 
         </section>
       </div>
     );
   }
-}
+
+export default Card;
