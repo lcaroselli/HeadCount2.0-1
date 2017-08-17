@@ -181,6 +181,15 @@ media query 1000
   font-size: 275%;
 }
 
+@keyframes title-grow {
+  0% {
+    font-size: 0%;
+  }
+  100% {
+    font-size: 275%;
+  }
+}
+
 .logo{
   width: 40px;
   height: 40px;
@@ -198,6 +207,15 @@ media query 750
 
 .title {
   font-size: 185%;
+}
+
+@keyframes title-grow {
+  0% {
+    font-size: 0%;
+  }
+  100% {
+    font-size: 185%;
+  }
 }
 
 .logo{
@@ -226,6 +244,15 @@ media query 510
 
 .title {
   font-size: 164%;
+}
+
+@keyframes title-grow {
+  0% {
+    font-size: 0%;
+  }
+  100% {
+    font-size: 164%;
+  }
 }
 
 .logo{

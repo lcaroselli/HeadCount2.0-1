@@ -43,9 +43,3 @@ export default class Controls extends Component {
     );
   }
 }
-
-Controls.PropTypes = {
-  input: PropTypes.string,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-}

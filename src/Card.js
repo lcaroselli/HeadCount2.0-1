@@ -35,9 +35,9 @@ const Card = ({ location, yearData }) => {
     );
   }
 
-  Card.PropTypes = {
-    dataYear: PropTypes.element.isRequired,
-    dataYear: PropTypes.array.isRequired,
+  Card.propTypes = {
+    yearData: PropTypes.element.isRequired,
+    yearData: PropTypes.object.isRequired,
     location: PropTypes.element.isRequired,
     location: PropTypes.string.isRequired,
   }

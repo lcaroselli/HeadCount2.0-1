@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 
 class DistrictRepository {
   constructor(data) {
