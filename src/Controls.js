@@ -8,13 +8,15 @@ export default class Controls extends Component {
     super();
     this.state={
       input: ''
-    } //state is only being used for search button, so we could just get rid of it
+    }
   }
 
-  submitSearch()  {
-    const userInput = this.state.input;
-    this.props.handleChange(userInput)
-  } //we might not need a search button so could get rid of this and the button
+  resetSearch() {
+    console.log('Its firing');
+    this.setState({
+      input: ''
+    })
+  }
 
   render() {
 
@@ -31,8 +33,8 @@ export default class Controls extends Component {
                 <section className='input-container'>
                   <div className='input-box'>
                     <input className='search-input' onChange={ this.props.handleChange } type='text' placeholder='  Enter Your Shit' />
-                    <div className='submit-btn' disabled={!this.state.input} onClick={ this.submitSearch.bind(this) }>
-                      <p className='submit-btn-title'>SEARCH</p>
+                    <div className='reset-btn' onClick={ this.resetSearch.bind(this) }>
+                      <p className='reset-btn-title'>RESET</p>
                     </div>
                   </div>
                 </section>
