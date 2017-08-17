@@ -3,15 +3,8 @@ import backgroundGraphic from '../assets/background.jpg';
 import PropTypes from 'prop-types';
 import music from '../assets/01 Welcome to the Jungle.m4a';
 
-export default class Background extends Component {
-  constructor() {
-    super();
-  }
+const Background = () => {
 
-
-
-
-  render() {
     return (
       <div>
 
@@ -26,5 +19,7 @@ export default class Background extends Component {
 
       </div>
     );
-  }
+
 }
+
+export default Background;

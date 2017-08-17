@@ -39,7 +39,3 @@ export default class App extends Component {
     );
   }
 }
-
-App.PropTypes = {
-  cards: PropTypes.object,
-}

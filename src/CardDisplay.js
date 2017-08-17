@@ -2,7 +2,6 @@ import React from 'react';
 import Card from './Card.js';
 import PropTypes from 'prop-types';
 
-
 const CardDisplay = ({ cardInfo }) => {
 
   const dataRender = cardInfo.map((school, i) =>
@@ -24,8 +23,8 @@ const CardDisplay = ({ cardInfo }) => {
     );
   }
 
-  CardDisplay.PropTypes = {
-    dataRender: PropTypes.element.isRequired,
+  CardDisplay.propTypes = {
+    cardInfo: PropTypes.array.isRequired,
   }
 
 export default CardDisplay;
