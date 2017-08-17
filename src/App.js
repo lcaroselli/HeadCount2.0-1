@@ -18,9 +18,9 @@ export default class App extends Component {
     };
   }
 
-  searchData(userInput) {
+  handleChange(e) {
     this.setState({
-      cards: districtData.findAllMatches(userInput)
+      cards: districtData.findAllMatches(e.target.value)
     });
   }
 
@@ -33,7 +33,7 @@ export default class App extends Component {
 
         <Background />
         <Controls
-          search = { this.searchData.bind(this) } />
+          handleChange = { this.handleChange.bind(this) } />
         <CardDisplay
           cardInfo={ this.state.cards } />
 

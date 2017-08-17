@@ -24,7 +24,6 @@ class DistrictRepository {
     }
   }
 
-
   findAllMatches(string) {
     let keysArray = Object.keys(this.data)
     let fullData = keysArray.map(key => this.data[key]);

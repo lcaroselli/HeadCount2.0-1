@@ -7,24 +7,13 @@ export default class Controls extends Component {
     super();
     this.state={
       input: ''
-    }
-  }
-
-  updateInput(e) {
-    this.setState({
-      input: e.target.value
-    })
+    } //state is only being used for search button, so we could just get rid of it
   }
 
   submitSearch()  {
     const userInput = this.state.input;
-    this.props.search(userInput)
-  }
-
-  searchOnChange(e)  {
-    this.updateInput(e);
-    this.submitSearch();
-  }
+    this.props.handleChange(userInput)
+  } //we might not need a search button so could get rid of this and the button
 
   render() {
 
@@ -40,9 +29,8 @@ export default class Controls extends Component {
                 </section>
                 <section className='input-container'>
                   <div className='input-box'>
-                    <input className='search-input' onChange={ e => this.searchOnChange(e) } type='text'
-                          placeholder='  Enter Your Shit' value={this.state.input} />
-                    <div className='submit-btn' onClick={ this.submitSearch.bind(this) }>
+                    <input className='search-input' onChange={ this.props.handleChange } type='text' placeholder='  Enter Your Shit' />
+                    <div className='submit-btn' disabled={!this.state.input} onClick={ this.submitSearch.bind(this) }>
                       <p className='submit-btn-title'>SEARCH</p>
                     </div>
                   </div>
@@ -50,7 +38,6 @@ export default class Controls extends Component {
               </section>
             </section>
           </section>
-
       </div>
     );
   }
