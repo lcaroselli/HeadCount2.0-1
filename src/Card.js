@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardDisplay from './CardDisplay.js';
+import PropTypes from 'prop-types'
 
 const Card = ({ location, yearData }) => {
   const yearKeys = Object.keys(yearData);
@@ -32,6 +33,13 @@ const Card = ({ location, yearData }) => {
         </section>
       </div>
     );
+  }
+
+  Card.PropTypes = {
+    dataYear: PropTypes.element.isRequired,
+    dataYear: PropTypes.array.isRequired,
+    location: PropTypes.element.isRequired,
+    location: PropTypes.string.isRequired,
   }
 
 export default Card;

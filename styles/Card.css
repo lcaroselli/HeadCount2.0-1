@@ -3,6 +3,17 @@
   width: 280px;
   margin: 8px 8px 8px 8px;
   border-radius: 8px;
+  box-shadow: 0px 0px 16px black;
+}
+
+.card:hover  {
+  box-shadow: 0px 0px 30px #619ddb;
+  cursor: pointer;
+}
+
+.card:hover .card-title-container {
+  /*cursor: pointer;*/
+  background: #619ddb;
 }
 
 .card-data {
@@ -16,6 +27,7 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
 
 .data {
   font-size: 16px;
@@ -33,10 +45,10 @@
   border-top-right-radius: 8px;
 }
 
-.card-title-container:hover {
+/*.card-title-container:hover {
   cursor: pointer;
-  background: #b99877;
-}
+  background: #619ddb;
+}*/
 
 .card-title {
   font-size: 14px;

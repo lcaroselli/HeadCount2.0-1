@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card.js';
+import PropTypes from 'prop-types';
 
 
 const CardDisplay = ({ cardInfo }) => {
@@ -21,6 +22,10 @@ const CardDisplay = ({ cardInfo }) => {
         </section>
       </div>
     );
+  }
+
+  CardDisplay.PropTypes = {
+    dataRender: PropTypes.element.isRequired,
   }
 
 export default CardDisplay;

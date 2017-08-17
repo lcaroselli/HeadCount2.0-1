@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../assets/head-count-logo.png'
 import logoWhite from '../assets/head-count-logo-white.png'
+import PropTypes from 'prop-types'
 
 export default class Controls extends Component {
   constructor() {
@@ -54,4 +55,10 @@ export default class Controls extends Component {
       </div>
     );
   }
+}
+
+Controls.PropTypes = {
+  input: PropTypes.string,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
 }
