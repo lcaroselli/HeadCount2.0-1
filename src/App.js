@@ -12,7 +12,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: districtData.findAllMatches(),
+      cards: districtData.findAllMatches()
     };
   }
 
@@ -22,6 +22,11 @@ export default class App extends Component {
     });
   }
 
+  reset() {
+    this.setState({
+      cards: districtData.findAllMatches()
+    });
+  }
 
   render() {
 
@@ -31,7 +36,8 @@ export default class App extends Component {
 
         <Background />
         <Controls
-          handleChange = { this.handleChange.bind(this) } />
+          handleChange = { this.handleChange.bind(this) }
+          reset = { this.reset.bind(this) }/>
         <CardDisplay
           cardInfo={ this.state.cards } />
 
