@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../assets/head-count-logo.png'
 import logoWhite from '../assets/head-count-logo-white.png'
 import PropTypes from 'prop-types'
 
@@ -7,16 +6,16 @@ export default class Controls extends Component {
   constructor() {
     super();
     this.state={
-      input: ''
+
     }
   }
 
   resetSearch() {
-    console.log('Its firing');
-    this.setState({
-      input: ''
-    })
+    let userInput = document.querySelector('.search-input');
+    userInput.value = '';
+    this.props.reset()
   }
+
 
   render() {
 
@@ -32,7 +31,8 @@ export default class Controls extends Component {
                 </section>
                 <section className='input-container'>
                   <div className='input-box'>
-                    <input className='search-input' onChange={ this.props.handleChange } type='text' placeholder='  Enter Your Shit' />
+                    <input className='search-input' onChange={ this.props.handleChange }
+                            type='text' placeholder='  Search School Districts' />
                     <div className='reset-btn' onClick={ this.resetSearch.bind(this) }>
                       <p className='reset-btn-title'>RESET</p>
                     </div>

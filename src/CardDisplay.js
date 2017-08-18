@@ -13,12 +13,14 @@ const CardDisplay = ({ cardInfo }) => {
 
     return (
       <div>
+
         <section className='card-display'>
           <div className='top-placeholder'></div>
           <section className='card-container'>
             { dataRender }
           </section>
         </section>
+
       </div>
     );
   }

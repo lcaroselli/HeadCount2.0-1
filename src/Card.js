@@ -22,6 +22,7 @@ const Card = ({ location, yearData }) => {
     return (
       <div>
         <section className='card'>
+        
           <section className='card-title-container'>
             <p className='card-title'> { location } </p>
           </section>
