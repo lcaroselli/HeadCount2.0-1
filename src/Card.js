@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardDisplay from './CardDisplay.js';
 import PropTypes from 'prop-types'
 
-const Card = ({ location, yearData }) => {
+const Card = ({ location, yearData, cardSelected }) => {
   const yearKeys = Object.keys(yearData);
   const colorTeal = {
     color: '#25727C'
@@ -19,10 +19,11 @@ const Card = ({ location, yearData }) => {
     }
   })
 
+
     return (
       <div>
-        <section className='card'>
-        
+        <section className='card' onClick={ (e) => cardSelected(e) }>
+
           <section className='card-title-container'>
             <p className='card-title'> { location } </p>
           </section>

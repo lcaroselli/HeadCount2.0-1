@@ -2,13 +2,15 @@ import React from 'react';
 import Card from './Card.js';
 import PropTypes from 'prop-types';
 
-const CardDisplay = ({ cardInfo }) => {
+const CardDisplay = ({ cardInfo, cardSelected }) => {
 
   const dataRender = cardInfo.map((school, i) =>
     <Card
     location = { school.location }
     yearData = { school.data }
-    key = { i } />
+    key = { i }
+    cardSelected = {cardSelected}
+    />
   )
 
     return (
