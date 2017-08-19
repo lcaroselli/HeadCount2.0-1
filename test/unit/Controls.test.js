@@ -14,7 +14,7 @@ describe('Controls', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should have state with an input of an empty string', () => { expect(wrapper.state().input).toEqual('');
+  it.skip('should have state with an input of an empty string', () => { expect(wrapper.state().input).toEqual('');
   })
 
   it('should render five sections', () => {
@@ -42,7 +42,7 @@ describe('Controls', () => {
   })
 
   it.skip('it should reset the input field', () => {
-    
+
   })
 
 
