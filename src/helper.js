@@ -26,7 +26,7 @@ class DistrictRepository {
     const result = {
       [upperLocation1]: average1,
       [upperLocation2]: average2,
-      compared: comparedAverage
+      COMPARED: comparedAverage
     }
     return result;
   }

@@ -227,6 +227,10 @@ media query 750
     height: 40%;
   }
 
+  .search-input  {
+    font-size: 15px;
+  }
+
 }
 
 
