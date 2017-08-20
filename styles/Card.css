@@ -1,4 +1,4 @@
-.card {
+.false {
   width: 280px;
   height: 300px;
   margin: 8px 8px 8px 8px;
@@ -6,7 +6,7 @@
   box-shadow: 0px 0px 16px black;
 }
 
-.card:hover  {
+.false:hover  {
   box-shadow: 0px 0px 30px #619ddb;
   cursor: pointer;
 }
@@ -48,10 +48,14 @@
   color: #FFF;
 }
 
-.cardSelected  {
+.true  {
   width: 280px;
   height: 300px;
   margin: 8px 8px 8px 8px;
   border-radius: 8px;
   box-shadow: 0px 0px 16px red;
+}
+
+.true:hover  {
+  cursor: pointer;
 }

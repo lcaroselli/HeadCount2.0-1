@@ -13,7 +13,8 @@ export default class App extends Component {
     super();
     this.state = {
       cards: districtData.findAllMatches(),
-      clicked: false
+      selectedCards: [],
+      cardCount: 0
     };
   }
 
@@ -35,24 +36,34 @@ export default class App extends Component {
     this.resetCards();
   }
 
-  cardSelected(e) {
-    console.log(e.currentTarget.className)
-    if(this.state.clicked === false) {
-      e.currentTarget.className = 'cardSelected'
-      this.setState=({
-        clicked: true
-      })
-      console.log(this.state.clicked)
-    }
-
-    if(this.state.clicked === true) {
-      e.currentTarget.className = 'card'
-      this.setState=({
-        clicked: false
+  cardSelected(location, e) {
+    if(this.state.selectedCards.length <= 1) {
+      this.checkCard(location);
+      this.setState({
+        cardCount: 1
       })
     }
-
   }
+
+  checkCard(location, e) {
+    const selectedCardIndex = this.state.cards.map(district => district.location).indexOf(location);
+    if(this.state.cards[selectedCardIndex].selected === false) {
+      this.state.selectedCards.push(location)
+      this.state.cards[selectedCardIndex].selected = true
+    }
+    else if(this.state.cards[selectedCardIndex].selected === true) {
+      const removeCard = this.state.selectedCards.find((district, index) => {
+        if (district === location) {
+        }
+      })
+      this.state.selectedCards.splice(removeCard, 1);
+      this.state.cards[selectedCardIndex].selected = false
+    }
+    console.log('selected cards array ', this.state.selectedCards)
+    console.log('selected card status ', this.state.cards[selectedCardIndex].selected)
+  }
+
+
 
   render() {
 

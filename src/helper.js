@@ -8,7 +8,7 @@ class DistrictRepository {
     return rawData.reduce((acc, object) => {
 
       if(!acc[object.Location]) {
-        acc[object.Location] = {location: object.Location.toUpperCase(), data:{} };
+        acc[object.Location] = {location: object.Location.toUpperCase(), data:{}, selected: false };
       }
       acc[object.Location].data[object.TimeFrame] = Math.round(1000 * object.Data) / 1000 || 0;
       return acc;
@@ -23,7 +23,7 @@ class DistrictRepository {
     const average1 = this.findAverage(upperLocation1);
     const average2 = this.findAverage(upperLocation2);
     const comparedAverage = Math.round((average1 / average2) * 1000) /1000
-    
+
     const result = {
       [upperLocation1]: average1,
       [upperLocation2]: average2,

@@ -9,6 +9,7 @@ const CardDisplay = ({ cardInfo, cardSelected }) => {
     location = { school.location }
     yearData = { school.data }
     key = { i }
+    selected = { school.selected}
     cardSelected = {cardSelected}
     />
   )
