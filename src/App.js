@@ -12,7 +12,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: districtData.findAllMatches()
+      cards: districtData.findAllMatches(),
+      clicked: false
     };
   }
 
@@ -32,6 +33,23 @@ export default class App extends Component {
     let userInput = document.querySelector('.search-input');
     userInput.value = '';
     this.reset();
+
+  cardSelected(e) {
+    console.log(e.currentTarget.className)
+    if(this.state.clicked === false) {
+      e.currentTarget.className = 'cardSelected'
+      this.setState=({
+        clicked: true
+      })
+      console.log(this.state.clicked)
+    }
+    if(this.state.clicked === true) {
+      e.currentTarget.className = 'card'
+      this.setState=({
+        clicked: false
+      })
+    }
+
   }
 
   render() {
@@ -46,7 +64,8 @@ export default class App extends Component {
           reset = { this.reset.bind(this) }
           resetSearch = { this.resetSearch.bind(this) }/>
         <CardDisplay
-          cardInfo={ this.state.cards } />
+          cardInfo={ this.state.cards }
+          cardSelected={this.cardSelected.bind(this)}/>
 
       </div>
     );
