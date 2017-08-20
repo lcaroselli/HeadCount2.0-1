@@ -33,6 +33,7 @@ export default class App extends Component {
     let userInput = document.querySelector('.search-input');
     userInput.value = '';
     this.reset();
+  }
 
   cardSelected(e) {
     console.log(e.currentTarget.className)
@@ -43,6 +44,7 @@ export default class App extends Component {
       })
       console.log(this.state.clicked)
     }
+
     if(this.state.clicked === true) {
       e.currentTarget.className = 'card'
       this.setState=({
