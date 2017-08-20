@@ -29,6 +29,11 @@ export default class App extends Component {
     });
   }
 
+  resetSearch() {
+    let userInput = document.querySelector('.search-input');
+    userInput.value = '';
+    this.reset();
+
   cardSelected(e) {
     console.log(e.currentTarget.className)
     if(this.state.clicked === false) {
@@ -56,7 +61,8 @@ export default class App extends Component {
         <Background />
         <Controls
           handleChange = { this.handleChange.bind(this) }
-          reset = { this.reset.bind(this) }/>
+          reset = { this.reset.bind(this) }
+          resetSearch = { this.resetSearch.bind(this) }/>
         <CardDisplay
           cardInfo={ this.state.cards }
           cardSelected={this.cardSelected.bind(this)}/>
