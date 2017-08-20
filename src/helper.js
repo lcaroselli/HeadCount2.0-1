@@ -1,4 +1,3 @@
-
 class DistrictRepository {
   constructor(data) {
     this.data = this.checkData(data)
@@ -29,7 +28,6 @@ class DistrictRepository {
       [upperLocation2]: average2,
       compared: comparedAverage
     }
-
     return result;
   }
 
