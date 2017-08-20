@@ -11,10 +11,13 @@ const CompareDisplay = ({ comparisonInfo, hideComparison }) => {
         <div className='compare-overlay'></div>
         <section className='compare-outer-container'>
           <section className='compare-container'>
+            <p className='compared-title'> COMPARED DATA </p>
+            <p className='district1'> district 1 </p>
+            <p className='compared'> compared </p>
+            <p className='district2'> district 2 </p>
             <div className='close-button' onClick={ () => hideComparison() }>
-              <p className='close-button-title'>CLOSE</p>
+            <p className='close-button-title'>CLOSE</p>
             </div>
-            <p className='compare'> { compareObj } </p>
           </section>
         </section>
       </div>

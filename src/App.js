@@ -67,6 +67,13 @@ export default class App extends Component {
     // console.log('selected card status ', this.state.cards[selectedCardIndex].selected)
   }
 
+  cleanCards() {
+    const cleanCard1 = this.state.cards.map(district => district.location).indexOf(this.state.selectedCards[0]);
+    const cleanCard2 = this.state.cards.map(district => district.location).indexOf(this.state.selectedCards[1]);
+    this.state.cards[cleanCard1].selected = false;
+    this.state.cards[cleanCard2].selected = false
+  }
+
   setComparison() {
     if(this.state.selectedCards.length >= 2){
       let location1 = this.state.selectedCards[0];
@@ -81,6 +88,7 @@ export default class App extends Component {
   }
 
   hideComparison() {
+    this.cleanCards();
     this.setState({
       comparedDisplay: false,
       selectedCards: []
