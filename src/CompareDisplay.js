@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 
 const CompareDisplay = ({ comparisonInfo, hideComparison }) => {
 
-  const compareObj = Object.keys(comparisonInfo)
+  const compareObjKeys = Object.keys(comparisonInfo);
 
+  const compareAvgData = compareObjKeys.map((key, i) => {
+    return (
+      <p key={i}>{ comparisonInfo[key] }</p>
+    )
+  })
 
     return (
       <div>
@@ -14,7 +19,8 @@ const CompareDisplay = ({ comparisonInfo, hideComparison }) => {
             <div className='close-button' onClick={ () => hideComparison() }>
               <p className='close-button-title'>CLOSE</p>
             </div>
-            <p className='compare'> { compareObj } </p>
+            <p className='compare'> { compareObjKeys }</p>
+            <p className='compare-data'> { compareAvgData }</p>
           </section>
         </section>
       </div>
