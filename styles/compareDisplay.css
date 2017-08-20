@@ -1,13 +1,17 @@
 
+/**********************************************
+          Compare Display
+***********************************************/
+
 .compare-overlay  {
   width: 100%;
   height: 100vh;
   position: absolute;
+  background: #FFF;
+  opacity: .8;
   top: 0;
   left: 0;
   z-index: 999;
-  background: #FFF;
-  opacity: .8;
   animation-name: compare-overlay-slide-open;
   animation-duration: 1s;
 }
@@ -24,23 +28,23 @@
 .compare-outer-container  {
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0px;
   left: 0px;
   animation-name: compare-overlay-slide-open;
   animation-duration: 2s;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .compare-container  {
   width: 300px;
   height: 380px;
+  background: #dce4e7;
   box-shadow: 0px 0px 30px black;
   border-radius: 10px;
-  background: #dce4e7;
   animation-name: compare-overlay-slide-open;
   animation-duration: 1s;
 }
@@ -52,27 +56,29 @@
   text-align: center;
   padding: 20px 0 10px 0;
   margin-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .district1  {
-  font-size: 30px;
+  font-size: 15px;
   color: #1b1f2a;
   text-align: center;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 10px 0;
 }
 
 .compared  {
-  font-size: 30px;
+  font-size: 15px;
   color: #1b1f2a;
   text-align: center;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 10px 0;
 }
 
 .district2  {
-  font-size: 30px;
+  font-size: 15px;
   color: #1b1f2a;
   text-align: center;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 10px 0;
 }
 
 .close-button {
@@ -84,13 +90,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 30px black;
+  box-shadow: 0px 0px 12px black;
   border-radius: 10px;
 }
 
 .close-button:hover {
   cursor: pointer;
-  background: red;
+  background: #619ddb;
 }
 
 .close-button-title {

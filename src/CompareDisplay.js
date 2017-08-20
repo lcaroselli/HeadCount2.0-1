@@ -17,9 +17,12 @@ const CompareDisplay = ({ comparisonInfo, hideComparison }) => {
         <section className='compare-outer-container'>
           <section className='compare-container'>
             <p className='compared-title'> COMPARED DATA </p>
-            <p className='district1'> district 1 </p>
-            <p className='compared'> compared </p>
-            <p className='district2'> district 2 </p>
+            <p className='district1'> {compareObjKeys[0]} </p>
+            <p className='district1'> {compareAvgData[0]} </p>
+            <p className='compared'> {compareObjKeys[1]} </p>
+            <p className='compared'> {compareAvgData[1]} </p>
+            <p className='district2'> {compareObjKeys[2]} </p>
+            <p className='district2'> {compareAvgData[2]} </p>
             <div className='close-button' onClick={ () => hideComparison() }>
             <p className='close-button-title'>CLOSE</p>
             </div>
