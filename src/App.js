@@ -79,7 +79,6 @@ export default class App extends Component {
       let location1 = this.state.selectedCards[0];
       let location2 = this.state.selectedCards[1];
       let comparedAverageObj = districtData.compareDistrictAverages(location1, location2);
-      console.log(comparedAverageObj)
       this.setState({
         comparedResult: comparedAverageObj,
         comparedDisplay: true
