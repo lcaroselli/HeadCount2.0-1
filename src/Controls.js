@@ -1,23 +1,8 @@
-import React, { Component } from 'react';
-import logoWhite from '../assets/head-count-logo-white.png'
-import PropTypes from 'prop-types'
+import React from 'react';
+import logoWhite from '../assets/head-count-logo-white.png';
+import PropTypes from 'prop-types';
 
-export default class Controls extends Component {
-  constructor() {
-    super();
-    this.state={
-
-    }
-  }
-
-  resetSearch() {
-    let userInput = document.querySelector('.search-input');
-    userInput.value = '';
-    this.props.reset()
-  }
-
-
-  render() {
+const Controls = ( { handleChange, resetSearch }) => {
 
     return (
       <div>
@@ -31,9 +16,9 @@ export default class Controls extends Component {
                 </section>
                 <section className='input-container'>
                   <div className='input-box'>
-                    <input className='search-input' onChange={ this.props.handleChange }
+                    <input className='search-input' onChange={ handleChange }
                             type='text' placeholder='  Search School Districts' />
-                    <div className='reset-btn' onClick={ this.resetSearch.bind(this) }>
+                    <div className='reset-btn' onClick={ resetSearch }>
                       <p className='reset-btn-title'>RESET</p>
                     </div>
                   </div>
@@ -43,5 +28,7 @@ export default class Controls extends Component {
           </section>
       </div>
     );
-  }
+
 }
+
+export default Controls;
