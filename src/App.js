@@ -14,7 +14,9 @@ export default class App extends Component {
     this.state = {
       cards: districtData.findAllMatches(),
       selectedCards: [],
-      cardCount: 0
+      cardCount: 0,
+      comparedResult: undefined,
+      comparedDisplay: false
     };
   }
 
@@ -59,28 +61,55 @@ export default class App extends Component {
       this.state.selectedCards.splice(removeCard, 1);
       this.state.cards[selectedCardIndex].selected = false
     }
-    console.log('selected cards array ', this.state.selectedCards)
-    console.log('selected card status ', this.state.cards[selectedCardIndex].selected)
+    this.setComparison();
+    // console.log('selected cards array ', this.state.selectedCards)
+    // console.log('selected card status ', this.state.cards[selectedCardIndex].selected)
   }
 
+  setComparison() {
+    if(this.state.selectedCards.length >= 2){
+      let location1 = this.state.selectedCards[0];
+      let location2 = this.state.selectedCards[1];
+      let comparedAverageObj = districtData.compareDistrictAverages(location1, location2);
+      // console.log(comparedAverageObj)
+      this.setState({
+        comparedResult: comparedAverageObj,
+        comparedDisplay: true
+      })
+    }
+  }
+
+  // hideComparison() {
+  //   this.setState({
+  //     comparedDisplay: false
+  //   })
+  //   resetCards();
+  // }
 
 
   render() {
-
 
     return (
       <div>
 
         <Background />
+
         <Controls
           handleChange = { this.handleChange.bind(this) }
           resetCards = { this.resetCards.bind(this) }
           resetSearch = { this.resetSearch.bind(this) }/>
+
         <CardDisplay
           cardInfo={ this.state.cards }
-          cardSelected={this.cardSelected.bind(this)}/>
+          cardSelected={ this.cardSelected.bind(this) }/>
 
       </div>
     );
   }
 }
+
+// { comparedDisplay &&
+//   <ComparedDisplay
+//     hideComparison = { this.hideComparison.bind(this) }
+//     comparisonInfo =  { this.state.comparedResult }/>
+// }
