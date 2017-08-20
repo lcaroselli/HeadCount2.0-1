@@ -11,7 +11,7 @@ const Controls = ( { handleChange, resetSearch }) => {
               <div className='header-container-background'></div>
               <section className='controls-header'>
                 <section className='title-container'>
-                  <img className='logo' src={logoWhite}/>
+                  <img className='logo' src={ logoWhite }/>
                   <h1 className='title'>HEAD COUNT 2.0</h1>
                 </section>
                 <section className='input-container'>

@@ -23,7 +23,7 @@ export default class App extends Component {
     });
   }
 
-  reset() {
+  resetCards() {
     this.setState({
       cards: districtData.findAllMatches()
     });
@@ -32,7 +32,7 @@ export default class App extends Component {
   resetSearch() {
     let userInput = document.querySelector('.search-input');
     userInput.value = '';
-    this.reset();
+    this.resetCards();
   }
 
   cardSelected(e) {
@@ -63,7 +63,7 @@ export default class App extends Component {
         <Background />
         <Controls
           handleChange = { this.handleChange.bind(this) }
-          reset = { this.reset.bind(this) }
+          resetCards = { this.resetCards.bind(this) }
           resetSearch = { this.resetSearch.bind(this) }/>
         <CardDisplay
           cardInfo={ this.state.cards }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Controls from '../../src/Controls'
+import Controls from '../src/Controls';
 import { shallow, mount } from 'enzyme';
 
 describe('Controls', () => {
@@ -12,9 +12,6 @@ describe('Controls', () => {
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
-  })
-
-  it.skip('should have state with an input of an empty string', () => { expect(wrapper.state().input).toEqual('');
   })
 
   it('should render five sections', () => {
@@ -40,10 +37,5 @@ describe('Controls', () => {
   it('should render a reset button', () => {
     expect(wrapper.find('.reset-btn').length).toEqual(1);
   })
-
-  it.skip('it should reset the input field', () => {
-
-  })
-
 
 })
