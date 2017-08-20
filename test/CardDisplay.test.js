@@ -17,11 +17,6 @@ describe('CardDisplay', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it.skip('should render all 181 cards upon initial display', () => {
-    const cards = wrapper.find('Card')
-    expect(Card.length).toEqual(181);
-  })
-
   it('should render 2 divs and 2 sections', () => {
     expect(wrapper.find('div').length).toEqual(2);
     expect(wrapper.find('section').length).toEqual(2);

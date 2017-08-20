@@ -6,6 +6,9 @@ import { shallow, mount } from 'enzyme';
 describe('App', () => {
   let wrapper;
 
+  const cardSelected = jest.fn();
+
+
   beforeEach( () => {
     wrapper = shallow(<App />);
   })
@@ -35,9 +38,7 @@ describe('App', () => {
     expect(wrapper.state().cards.length).toEqual(2);
   })
 
-  //test handleChange
-  //test resetCards
-  //test resetSearch
-  //test cardSelected
-
+  it.skip('TEST STATE CHANGE', () => {
+    
+  })
 })
