@@ -3,6 +3,7 @@ import CardDisplay from './CardDisplay.js';
 import Controls from './Controls.js';
 import DistrictRepository from './helper.js';
 import Background from './Background.js';
+import CompareDisplay from './CompareDisplay.js';
 import kinderData from '../data/kindergartners_in_full_day_program.js';
 import PropTypes from 'prop-types'
 
@@ -15,7 +16,7 @@ export default class App extends Component {
       cards: districtData.findAllMatches(),
       selectedCards: [],
       cardCount: 0,
-      comparedResult: undefined,
+      comparedResult: null,
       comparedDisplay: false
     };
   }
@@ -71,7 +72,7 @@ export default class App extends Component {
       let location1 = this.state.selectedCards[0];
       let location2 = this.state.selectedCards[1];
       let comparedAverageObj = districtData.compareDistrictAverages(location1, location2);
-      // console.log(comparedAverageObj)
+      console.log(comparedAverageObj)
       this.setState({
         comparedResult: comparedAverageObj,
         comparedDisplay: true
@@ -79,12 +80,13 @@ export default class App extends Component {
     }
   }
 
-  // hideComparison() {
-  //   this.setState({
-  //     comparedDisplay: false
-  //   })
-  //   resetCards();
-  // }
+  hideComparison() {
+    this.setState({
+      comparedDisplay: false,
+      selectedCards: []
+    })
+    this.resetCards();
+  }
 
 
   render() {
@@ -103,13 +105,13 @@ export default class App extends Component {
           cardInfo={ this.state.cards }
           cardSelected={ this.cardSelected.bind(this) }/>
 
+        {this.state.comparedDisplay &&
+        <CompareDisplay
+        comparisonInfo =  { this.state.comparedResult }
+        hideComparison = { this.hideComparison.bind(this) }
+        />}
+
       </div>
     );
   }
 }
-
-// { comparedDisplay &&
-//   <ComparedDisplay
-//     hideComparison = { this.hideComparison.bind(this) }
-//     comparisonInfo =  { this.state.comparedResult }/>
-// }
