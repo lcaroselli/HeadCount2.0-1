@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardDisplay from './CardDisplay.js';
+import CardDisplay from './CardDisplay';
 import PropTypes from 'prop-types'
 
 const Card = ({ location, yearData, selected, cardSelected }) => {

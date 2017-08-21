@@ -7,15 +7,15 @@ describe('Controls', () => {
   let wrapper;
   let mountWrapper;
   const handleChangeFn = jest.fn();
-  const resetSearchFn = jest.fn();
+  const resetCardsFn = jest.fn();
 
   beforeEach( () => {
     wrapper = shallow(<Controls
                         handleChange = { handleChangeFn }
-                        resetSearch = { resetSearchFn } />);
+                        resetCards = { resetCardsFn } />);
     mountWrapper = mount(<Controls
                         handleChange = { handleChangeFn }
-                        resetSearch = { resetSearchFn } />);
+                        resetCards = { resetCardsFn } />);
   })
 
   it('should exist', () => {
@@ -26,8 +26,8 @@ describe('Controls', () => {
     expect(mountWrapper.props().handleChange).toEqual(handleChangeFn);
   })
 
-  it('should have a function for the resetSearch property', () => {
-    expect(mountWrapper.props().resetSearch).toEqual(resetSearchFn);
+  it('should have a function for the resetCards property', () => {
+    expect(mountWrapper.props().resetCards).toEqual(resetCardsFn);
   })
 
   it('should reset the input field to an empty string when the reset button is clicked', () => {
@@ -35,11 +35,11 @@ describe('Controls', () => {
 
     resetButton.simulate('click');
 
-    expect(resetSearchFn).toHaveBeenCalled();
-    expect(resetSearchFn).toHaveBeenCalledTimes(1);
+    expect(resetCardsFn).toHaveBeenCalled();
+    expect(resetCardsFn).toHaveBeenCalledTimes(1);
 
     resetButton.simulate('click');
-    expect(resetSearchFn).toHaveBeenCalledTimes(2);
+    expect(resetCardsFn).toHaveBeenCalledTimes(2);
   })
 
   it('should handle a change in the input field', () => {

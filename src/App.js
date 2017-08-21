@@ -1,42 +1,24 @@
 import React, { Component } from 'react';
-import CardDisplay from './CardDisplay.js';
-import Controls from './Controls.js';
-import DistrictRepository from './helper.js';
-import Background from './Background.js';
-import CompareDisplay from './CompareDisplay.js';
-import kinderData from '../data/kindergartners_in_full_day_program.js';
+import Background from './Background';
+import CardDisplay from './CardDisplay';
+import CompareDisplay from './CompareDisplay';
+import Controls from './Controls';
+import DistrictRepository from './helper';
+import kinderData from '../data/kindergartners_in_full_day_program';
 import PropTypes from 'prop-types'
-
 const districtData = new DistrictRepository(kinderData);
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: districtData.findAllMatches(),
-      selectedCards: [],
+      cards: [],
       cardCount: 0,
+      comparedDisplay: false,
       comparedResult: null,
-      comparedDisplay: false
+      input: '',
+      selectedCards: []
     };
-  }
-
-  handleChange(e) {
-    this.setState({
-      cards: districtData.findAllMatches(e.target.value)
-    });
-  }
-
-  resetCards() {
-    this.setState({
-      cards: districtData.findAllMatches()
-    });
-  }
-
-  resetSearch() {
-    let userInput = document.querySelector('.search-input');
-    userInput.value = '';
-    this.resetCards();
   }
 
   cardSelected(location, e) {
@@ -44,7 +26,7 @@ export default class App extends Component {
       this.checkCard(location);
       this.setState({
         cardCount: 1
-      })
+      });
     }
   }
 
@@ -63,15 +45,40 @@ export default class App extends Component {
       this.state.cards[selectedCardIndex].selected = false
     }
     this.setComparison();
-    // console.log('selected cards array ', this.state.selectedCards)
-    // console.log('selected card status ', this.state.cards[selectedCardIndex].selected)
   }
 
   cleanCards() {
-    const cleanCard1 = this.state.cards.map(district => district.location).indexOf(this.state.selectedCards[0]);
-    const cleanCard2 = this.state.cards.map(district => district.location).indexOf(this.state.selectedCards[1]);
-    this.state.cards[cleanCard1].selected = false;
-    this.state.cards[cleanCard2].selected = false
+    const cleanCards = this.state.cards.map(district => district.location).indexOf(this.state.selectedCards[0], this.state.selectedCards[1]);
+    this.state.cards[cleanCards].selected = false;
+  }
+
+  componentDidMount() {
+    this.setState({
+      cards: districtData.findAllMatches()
+    });
+  }
+
+  handleChange(e) {
+    this.setState({
+      cards: districtData.findAllMatches(e.target.value),
+      input: e.target.value
+    });
+  }
+
+  hideComparison() {
+    this.cleanCards();
+    this.setState({
+      comparedDisplay: false,
+      selectedCards: []
+    });
+    this.resetCards();
+  }
+
+  resetCards() {
+    this.setState({
+      cards: districtData.findAllMatches(),
+      input: ''
+    });
   }
 
   setComparison() {
@@ -86,18 +93,7 @@ export default class App extends Component {
     }
   }
 
-  hideComparison() {
-    this.cleanCards();
-    this.setState({
-      comparedDisplay: false,
-      selectedCards: []
-    })
-    this.resetCards();
-  }
-
-
   render() {
-
     return (
       <div>
 
@@ -106,17 +102,18 @@ export default class App extends Component {
         <Controls
           handleChange = { this.handleChange.bind(this) }
           resetCards = { this.resetCards.bind(this) }
-          resetSearch = { this.resetSearch.bind(this) }/>
+          value = { this.state.input } />
 
         <CardDisplay
-          cardInfo={ this.state.cards }
-          cardSelected={ this.cardSelected.bind(this) }/>
+          cardInfo = { this.state.cards }
+          cardSelected = { this.cardSelected.bind(this) } />
 
-        {this.state.comparedDisplay &&
-        <CompareDisplay
-        comparisonInfo =  { this.state.comparedResult }
-        hideComparison = { this.hideComparison.bind(this) }
-        />}
+        { this.state.comparedDisplay &&
+          <CompareDisplay
+            comparisonInfo =  { this.state.comparedResult }
+            hideComparison = { this.hideComparison.bind(this) }
+          />
+        }
 
       </div>
     );

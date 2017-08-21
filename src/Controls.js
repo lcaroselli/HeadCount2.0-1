@@ -2,7 +2,7 @@ import React from 'react';
 import logoWhite from '../assets/head-count-logo-white.png';
 import PropTypes from 'prop-types';
 
-const Controls = ( { handleChange, resetSearch }) => {
+const Controls = ( { handleChange, resetCards, value }) => {
 
     return (
       <div>
@@ -17,8 +17,8 @@ const Controls = ( { handleChange, resetSearch }) => {
                 <section className='input-container'>
                   <div className='input-box'>
                     <input className='search-input' onChange={ handleChange }
-                            type='text' placeholder='  Search School Districts' />
-                    <div className='reset-btn' onClick={ resetSearch }>
+                            type='text' placeholder='Search School Districts' value={ value } />
+                    <div className='reset-btn' onClick={ resetCards }>
                       <p className='reset-btn-title'>RESET</p>
                     </div>
                   </div>

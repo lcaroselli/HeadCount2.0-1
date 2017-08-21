@@ -7,7 +7,7 @@ class DistrictRepository {
     return rawData.reduce((acc, object) => {
 
       if(!acc[object.Location]) {
-        acc[object.Location] = {location: object.Location.toUpperCase(), data:{}, selected: false };
+        acc[object.Location] = { location: object.Location.toUpperCase(), data:{}, selected: false };
       }
       acc[object.Location].data[object.TimeFrame] = Math.round(1000 * object.Data) / 1000 || 0;
       return acc;

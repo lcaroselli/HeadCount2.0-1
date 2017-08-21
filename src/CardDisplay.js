@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card.js';
+import Card from './Card';
 import PropTypes from 'prop-types';
 
 const CardDisplay = ({ cardInfo, cardSelected }) => {
@@ -9,8 +9,8 @@ const CardDisplay = ({ cardInfo, cardSelected }) => {
     location = { school.location }
     yearData = { school.data }
     key = { i }
-    selected = { school.selected}
-    cardSelected = {cardSelected}
+    selected = { school.selected }
+    cardSelected = { cardSelected }
     />
   )
 
