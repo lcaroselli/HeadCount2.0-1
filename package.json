@@ -1,6 +1,7 @@
 {
   "name": "headcount",
   "version": "0.1.0",
+  "homepage": "https://lcaroselli.github.io/HeadCount2.0-1/",
   "private": true,
   "devDependencies": {
     "enzyme": "^2.9.1",
@@ -12,10 +13,13 @@
     "regenerator-runtime": "^0.11.0"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
