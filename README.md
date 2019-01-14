@@ -1,4 +1,6 @@
-# HeadCount 2.0 - Laura Caroselli & Jason Lucas
+# HeadCount 2.0
+
+LIVE SITE: https://lcaroselli.github.io/HeadCount2.0-1/
 
 ![HeadCount2/0 Screenshot](/assets/Screenshot.png?raw=true "HeadCount2.0 Screenshot")
 
@@ -11,17 +13,3 @@ This application can be used to search for different school districts, display t
 * JavaScript
 * React
 * Jest/Enzyme for testing
-
-HeadCount 2.0 is a project designed to challenge your skills at manipulating data and creating small, reusable React components.  
-
-## Set Up
-* Fork this project
-* Run `npm install` from the root directory
-* Run `npm start` and visit localhost:3000 in your browser
-
-
-## Project Goals
-* Separate application logic into small, testable functions.
-* Create modular, reusable React components.
-* Use propTypes to validate props passed to each component.
-* Write meaningful, comprehensive unit and integration tests.
